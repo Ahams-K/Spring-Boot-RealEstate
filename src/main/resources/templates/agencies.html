@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agencies</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <script defer th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap-icons/font/bootstrap-icons.css} "/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="~{header::header}"></header>
+<h1 th:text="#{navbar.link.agencies}">Agencies:</h1>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4 mb-3" th:each="agency : ${Agencies}">
+            <div class="card shadow-sm">
+                <img th:src="${agency.image}" class="card-img-top" th:alt="${agency.agencyName}" style="height: 250px; object-fit: cover;">
+                <div class="card-body">
+                    <h3 class="card-title" th:text="${agency.agencyName}"></h3>
+                    <form th:action="@{/agencies/{id}(id=${agency.agencyID})}" method="get">
+                        <button type="submit" class="btn btn-primary" th:text="#{agencydetails}">View Agency Details</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="~{footer::footer}"></footer>
+</body>
+</html>

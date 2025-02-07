@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script defer th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap-icons/font/bootstrap-icons.css} "/>
+</head>
+<body>
+<header th:fragment="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                </svg>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" th:href="@{/agents}" th:text="#{navbar.link.allAgents}"></a>
+                    <a class="nav-link" th:href="@{/agents/add}" th:text="#{navbar.link.addAgents}"></a>
+                    <a class="nav-link" th:href="@{/properties}" th:text="#{navbar.link.allProperties}"></a>
+                    <a class="nav-link" th:href="@{/properties/add}" th:text="#{navbar.link.addProperties}"></a>
+                    <a class="nav-link" th:href="@{/agencies}" th:text="#{navbar.link.agencies}"></a>
+                    <a class="nav-link" th:href="@{/history}" th:text="#{navbar.link.sessionHistory}"></a>
+                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" th:text="#{navbar.link.language}">Language</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="?lang=en">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                                    <rect width="24" height="16" fill="#012169"/>
+                                    <path d="M0,1 L24,15 M0,15 L24,1" stroke="#FFF" stroke-width="2"/>
+                                    <path d="M0,1 L24,15 M0,15 L24,1" stroke="#C8102E" stroke-width="1"/>
+                                    <path d="M12,0 L12,16 M0,8 L24,8" stroke="#FFF" stroke-width="4"/>
+                                    <path d="M12,0 L12,16 M0,8 L24,8" stroke="#C8102E" stroke-width="2"/>
+                                </svg>
+                                    English
+                            </a>
+                            <a class="dropdown-item" href="?lang=nl">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 3 2">
+                                <rect width="3" height="0.67" y="0" fill="#21468B"/>
+                                <rect width="3" height="0.67" y="0.67" fill="#FFFFFF"/>
+                                <rect width="3" height="0.67" y="1.34" fill="#AE1C28"/>
+                            </svg>
+                                Nederlands
+                            </a>
+                            <a class="dropdown-item" href="?lang=fr">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 3 2">
+                                <rect width="1" height="2" x="0" fill="#0055A4"/>
+                                <rect width="1" height="2" x="1" fill="#FFFFFF"/>
+                                <rect width="1" height="2" x="2" fill="#EF4135"/>
+                            </svg>
+                                French
+                            </a>
+                        </div>
+                    </li>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+</body>
+</html>
